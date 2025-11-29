@@ -1,0 +1,2 @@
+- [x]  Connect to redis
+- [ ] Accept user input of PORT and such
