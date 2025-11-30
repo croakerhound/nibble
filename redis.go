@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 
 	"github.com/redis/go-redis/v9"
 )
@@ -26,4 +27,17 @@ func connectToRedis() (*redis.Client, context.Context, error) {
 	}
 
 	return rdb, ctx, err
+}
+
+func getAllKeys(rdb *redis.Client, ctx context.Context) {
+	keys, err := rdb.Keys(ctx, "*").Result()
+
+	if err != nil {
+		fmt.Println("Failed to get Keys", err)
+	}
+
+	fmt.Println("Keys in Redis")
+	for _, key := range keys {
+		fmt.Println("-", key)
+	}
 }

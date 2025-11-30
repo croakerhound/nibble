@@ -2,6 +2,6 @@ package main
 
 func main() {
 
-	_, _, _ = connectToRedis()
-
+	rdb, ctx, _ := connectToRedis()
+	getAllKeys(rdb, ctx)
 }
