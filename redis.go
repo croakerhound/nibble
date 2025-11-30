@@ -6,7 +6,7 @@ import (
 	"github.com/redis/go-redis/v9"
 )
 
-func ConnectToRedis() (*redis.Client, context.Context, error) {
+func connectToRedis() (*redis.Client, context.Context, error) {
 	rdb := redis.NewClient(&redis.Options{
 		Addr:     "localhost:6379",
 		Password: "", // no password
