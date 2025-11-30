@@ -1,4 +1,4 @@
-module redis-tui
+module nibble
 
 go 1.25.4
 
